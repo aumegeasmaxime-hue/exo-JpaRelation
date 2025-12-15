@@ -2,7 +2,6 @@ package com.exoRelationJPA.exoRelationJpa.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +10,8 @@ import java.util.List;
 public class Professeur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
+
     private String nom;
     private String prenom;
     private String email;
