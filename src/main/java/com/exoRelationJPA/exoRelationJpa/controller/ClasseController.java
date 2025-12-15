@@ -38,7 +38,7 @@ public class ClasseController {
     public String getFormModifyClasse(@PathVariable Long id,Model model) {
         Classe classe = classeService.findClasseById(id);
         if (classe != null){
-            model.addAttribute("article", classe);
+            model.addAttribute("classe", classe);
             return "form";
         }
         return "redirect:/";
