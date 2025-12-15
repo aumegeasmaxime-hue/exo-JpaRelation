@@ -18,7 +18,7 @@ public class ProfesseurService {
     }
     public Professeur findProfesseurById(Long id){
         return professeurRepository.findById(id)
-                .orElseThrow(()->new IllegalArgumentException("article with id " + id + " not found"));
+                .orElseThrow(()->new IllegalArgumentException("Professeur with id " + id + " not found"));
     }
     public void createNewProfesseur(Professeur professeur) {
         professeurRepository.save(professeur);

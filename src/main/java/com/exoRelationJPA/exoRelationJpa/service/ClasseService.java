@@ -1,7 +1,10 @@
 package com.exoRelationJPA.exoRelationJpa.service;
 
+import com.exoRelationJPA.exoRelationJpa.model.Classe;
 import com.exoRelationJPA.exoRelationJpa.repository.ClasseRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ClasseService {
@@ -9,5 +12,22 @@ public class ClasseService {
 
     public ClasseService (ClasseRepository classeRepository){
         this.classeRepository = classeRepository;
+    }
+    public List<Classe> getAllArticle() {
+        return classeRepository.findAll();
+    }
+    public Classe findClasseById(Long id){
+        return classeRepository.findById(id)
+                .orElseThrow(()->new IllegalArgumentException("Classe with id " + id + " not found"));
+    }
+    public void createNewClasse(Classe classe) {
+        classeRepository.save(classe);
+    }
+    public Classe modifyClasse(Classe classe) {
+        return classeRepository.save(classe);
+    }
+    public void deleteClasse(Long id){
+        Classe deleteClasse = findClasseById(id);
+        classeRepository.delete(deleteClasse);
     }
 }
