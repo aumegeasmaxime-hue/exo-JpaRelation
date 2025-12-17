@@ -2,14 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Gestion des classes</title>
 </head>
 <body>
     <header>
         <h2>Gestion des classes</h2>
     </header>
     <main>
-
         <div>
             <a th:href="@{/classes/new}"><button class="bouton">Ajouter une classe</button></a>
         </div>
@@ -17,32 +16,18 @@
             <tbody th:each="model :${models}">
                 <th><p>Classe:</p></th>
                 <td><p th:text="${model.nom}"></p></td>
-
-
+                <td><a th:href="@{/classes/{id}(id=${model.id})}"><button>Details</button></a></td>
+                <td><a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button>Modifier</button></a></td>
+                <td><a th:href="@{/classes/{id}/delete(id=${model.id})}"><button>Delete</button></a></td>
+                <td><p>Professeur:</p></td>
+                <td><p th:text="${model.professeur.nom}"></p></td>
+                <td><p th:text="${model.professeur.prenom}"></p></td>
+                <td><a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button>Detail</button></a></td>
             </tbody>
-
-
         </table>
-        <div th:each="model :${models}">
-            <div>
-                <span>nom:</span>
-                <span th:text="${model.nom}"></span>
-
-                <span>professeur:</span>
-                <span th:text="${model.professeur.nom}"></span>
-                <span th:text="${model.professeur.prenom}"></span>
-                <a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button>Detail</button></a>
-            </div>
-            <div>
-                <a th:href="@{/classes/{id}(id=${model.id})}"><button>Details</button></a>
-                <a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button>Modifier</button></a>
-                <a th:href="@{/classes/{id}/delete(id=${model.id})}"><button>Delete</button></a>
-            </div>
-        </div>
         <div>
             <a th:href="@{/professeurs/}"><button>Liste professeurs</button></a>
         </div>
-
     </main>
 
 </body>

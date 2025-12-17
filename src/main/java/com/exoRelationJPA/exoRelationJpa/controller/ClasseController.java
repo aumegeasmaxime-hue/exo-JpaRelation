@@ -2,6 +2,7 @@ package com.exoRelationJPA.exoRelationJpa.controller;
 
 import com.exoRelationJPA.exoRelationJpa.model.Classe;
 import com.exoRelationJPA.exoRelationJpa.service.ClasseService;
+import com.exoRelationJPA.exoRelationJpa.service.ProfesseurService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,11 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/classes")
 public class ClasseController {
+    private ProfesseurService professeurService;
     private ClasseService classeService;
 
-    public ClasseController (ClasseService classeService){
+    public ClasseController(ProfesseurService professeurService, ClasseService classeService) {
+        this.professeurService = professeurService;
         this.classeService = classeService;
     }
+
     @GetMapping("/")
     public String getAllClasse (Model model){
         model.addAttribute("models",classeService.getAllArticle());
@@ -27,10 +31,11 @@ public class ClasseController {
     @GetMapping("/new")
     public String getFormNewClasse(Model model) {
         model.addAttribute("classe", new Classe());
+        model.addAttribute("professeurs",professeurService.getAllProfesseur());
         return "/classes/form";
     }
     @PostMapping("/new")
-    public String newClasse (@ModelAttribute Classe newClasse, Model model){
+    public String newClasse (@ModelAttribute Classe newClasse){
         classeService.createNewClasse(newClasse);
         return "redirect:/classes/";
     }

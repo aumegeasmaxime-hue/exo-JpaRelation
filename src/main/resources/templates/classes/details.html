@@ -5,36 +5,37 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <span>nom:</span>
-    <span th:text="${model.nom}"></span>
-
-    <span>niveau:</span>
-    <span th:text="${model.niveau}"></span>
-
-    <span>matiere:</span>
-    <span th:text="${model.matiere}"></span>
-
-    <span>nombre d'eleves:</span>
-    <span th:text="${model.nbEleve}"></span>
-</div>
-<div>
-    <span>professeur:</span>
-    <span th:text="${model.professeur.nom}"></span>
-    <span th:text="${model.professeur.prenom}"></span>
-    <span th:text="${model.professeur.email}"></span>
-    <a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button>Detail</button></a>
-</div>
-<div>
-    <a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button>Modifier</button></a>
-    <a th:href="@{/classes/{id}/delete(id=${model.id})}"><button>Delete</button></a>
-    <a th:href="@{/classes/}"><button>Retour</button></a>
-</div>
-
-
-
-
-
-
+    <table>
+        <thead>
+            <tr>
+                <th><p>Classe</p></th>
+                <th><p>Niveau:</p></th>
+                <th><p>Matiere:</p></th>
+                <th><p>Nombre d'élèves:</p></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><p>Professeur:</p></th>
+                <th><p>Prenom:</p></th>
+                <th><p>Email:</p></th>
+            </tr>
+        </thead>
+        <tbody>
+            <td><p th:text="${model.nom}"></p></td>
+            <td><p th:text="${model.niveau}"></p></td>
+            <td><p th:text="${model.matiere}"></p></td>
+            <td><p th:text="${model.nbEleve}"></p></td>
+            <td><a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button>Modifier</button></a></td>
+            <td><a th:href="@{/classes/{id}/delete(id=${model.id})}"><button>Delete</button></a></td>
+            <td></td>
+            <td><p th:text="${model.professeur.nom}"></p></td>
+            <td><p th:text="${model.professeur.prenom}"></p></td>
+            <td><p th:text="${model.professeur.email}"></p></td>
+            <td><a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button>Detail</button></a></td>
+        </tbody>
+    </table>
+    <div>
+        <a href="javascript:history.back()"><button>Retour</button></a>
+    </div>
 </body>
 </html>

@@ -3,38 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/professeur.css}">
 </head>
+
 <body>
-<div>
-    <p th:text="${modelP.id}"></p>
-    <p th:text="${modelP.nom}"></p>
-    <p th:text="${modelP.prenom}"></p>
-    <p th:text="${modelP.email}"></p>
-    <p>Classes enseignés</p>
-    <div th:each="classe :${modelP.classes} ">
-        <p th:text="${classe.nom}"></p>
-        <p th:text="${classe.niveau}"></p>
-        <p th:text="${classe.matiere}"></p>
-        <p th:text="${classe.nbEleve}"></p>
-    </div>
-    <div>
-        <p>Nombre de classes:</p>
-        <span th:text="${nbClasse}"></span>
-    </div>
-    <div>
-        <p>Nombre de élèves:</p>
-        <span th:text="${nbEleve}"></span>
-    </div>
-
-    <div>
-        <a th:href="@{/professeurs/{id}(id=${modelP.id})}"><button>Details</button></a>
-        <a th:href="@{/professeurs/{id}/modifier(id=${modelP.id})}"><button>Modifier</button></a>
-        <a th:href="@{/professeurs/{id}/delete(id=${modelP.id})}"><button>Delete</button></a>
-    </div>
-    <div>
-        <a th:href="@{/professeurs/}"><button>Retour</button></a>
-    </div>
-
-
+    <header>
+        <h2 class="titre">Details du professeur</h2>
+    </header>
+    <main>
+        <div>
+            <p th:text="${modelP.id}"></p>
+            <p th:text="${modelP.nom}"></p>
+            <p th:text="${modelP.prenom}"></p>
+            <p th:text="${modelP.email}"></p>
+        </div>
+        <div>
+            <a th:href="@{/professeurs/{id}/modifier(id=${modelP.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a>
+            <a th:href="@{/professeurs/{id}/delete(id=${modelP.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a>
+        </div>
+        <div><h3>Classes enseignés</h3></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Niveau</th>
+                    <th>Matière</th>
+                    <th>Nombre d'élèves</th>
+                </tr>
+            </thead>
+            <tbody th:each="classe :${modelP.classes}">
+                <th><p th:text="${classe.nom}"></p></th>
+                <td><p th:text="${classe.niveau}"></p></td>
+                <td><p th:text="${classe.matiere}"></p></td>
+                <td><p th:text="${classe.nbEleve}"></p></td>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row" colspan="3">Nombre total eleves</th>
+                    <td><p th:text="${nbEleve}"></p></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="3">Nombre de classes:</th>
+                    <td><p th:text="${nbClasse}"></p></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div>
+            <a href="javascript:history.back()"><button class="bouton" id="bouton-liste">Retour</button></a>
+        </div>
+    </main>
 </body>
 </html>

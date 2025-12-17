@@ -1,0 +1,48 @@
+.titre{
+    text-align: center;
+    font-family: Optima, sans-serif;
+    color: #3400c2;
+}
+.bouton{
+    font-size: 15px;
+    font-family: Optima, sans-serif;
+    color: white;
+    border-radius: 20px;
+    margin: 3px;
+}
+#bouton-cree{
+    background-color:#707070;
+}
+#bouton-modifier{
+    background-color:#a37000;
+}
+#bouton-supprimer{
+    background-color:#ff0000;
+}
+#bouton-detail{
+    background-color:#00a303;
+}
+#bouton-liste{
+    background-color:#0617f9;
+}
+#bouton-submit{
+    background-color:#0617f9;
+}
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+th {
+    border-bottom: 1px solid;
+    padding: 5px;
+    text-align: center;
+    height: 50px;
+
+}
+td {
+    border-bottom: 1px solid;
+    text-align: center;
+    height: 20px;
+}
+
+

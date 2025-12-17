@@ -20,15 +20,24 @@
         <label for="nb-eleve">Nombre d'élèves: </label>
         <input type="text" th:field="*{nbEleve}" id="nb-eleve" required>
 
-        <label for="professeur">professeur: </label>
-        <input type="text" th:field="*{professeur}" id="professeur" required>
+        <div>
+            <label for="professeur">Professeur</label>
+            <select id="professeur" name="professeur" class="form-input" required>
+                <option value="">-- Sélectionner un professeur --</option>
+                <option th:each="prof : ${professeurs}"
+                        th:value="${prof.id}"
+                        th:text="${prof.prenom} + ' ' + ${prof.nom}"
+                        th:selected="${classe.professeur != null && classe.professeur.id == prof.id}">
+                </option>
+            </select>
+        </div>
 
         <div>
             <button type="submit" class="bouton">Envoyer</button>
 
         </div>
     </form>
-    <a th:href="@{/classes/}"><button>Retour</button></a>
+    <a href="javascript:history.back()"><button>Retour</button></a>
 </main>
 
 </body>

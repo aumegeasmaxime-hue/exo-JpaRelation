@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/professeur.css}">
 </head>
 <body>
+    <header>
+        <h2 class="titre">Formulaire ajouter un professeur</h2>
+    </header>
 <main>
     <form th:action="${professeur.id == null ? '/professeurs/new' : '/professeurs/' + professeur.id + '/modifier'}" th:object="${professeur}" method="post">
 
@@ -18,9 +22,10 @@
         <input type="text" th:field="*{email}" id="email" required>
 
         <div>
-            <button type="submit" class="bouton">Envoyer</button>
+            <button type="submit" class="bouton" id="bouton-submit">Envoyer</button>
         </div>
     </form>
+    <a href="javascript:history.back()"><button class="bouton" id="bouton-liste">Retour</button></a>
 </main>
 
 
