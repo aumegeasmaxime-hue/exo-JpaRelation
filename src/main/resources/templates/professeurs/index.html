@@ -10,18 +10,24 @@
         <h2 class="titre">Gestion des Professeurs</h2>
     </header>
     <main>
-        <div>
+        <div id="div-">
             <a th:href="@{/professeurs/new}"><button class="bouton" id="bouton-cree">Ajouter un professeur</button></a>
         </div>
-        <table>
-            <tbody th:each="modelP :${models} ">
-                <th><p th:text="${modelP.nom}"></p></th>
-                <th><p th:text="${modelP.prenom}" class="table-th"></p></th>
-                <td><a th:href="@{/professeurs/{id}(id=${modelP.id})}"><button class="bouton" id="bouton-detail">Details</button></a></td>
-                <td><a th:href="@{/professeurs/{id}/modifier(id=${modelP.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a></td>
-                <td><a th:href="@{/professeurs/{id}/delete(id=${modelP.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a></td>
-            </tbody>
-        </table>
+        <div id="div-table">
+            <table th:each="modelP :${models} ">
+                <tbody>
+                    <tr>
+                        <th><p th:text="${modelP.nom}"></p></th>
+                        <th><p th:text="${modelP.prenom}" class="table-th"></p></th>
+                        <td>
+                            <a th:href="@{/professeurs/{id}(id=${modelP.id})}"><button class="bouton" id="bouton-detail">Details</button></a>
+                            <a th:href="@{/professeurs/{id}/modifier(id=${modelP.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a>
+                            <a th:href="@{/professeurs/{id}/delete(id=${modelP.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div>
             <a th:href="@{/classes/}"><button class="bouton" id="bouton-liste">Liste classes</button></a>
         </div>

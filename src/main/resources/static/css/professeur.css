@@ -28,21 +28,23 @@
 #bouton-submit{
     background-color:#0617f9;
 }
+#div-table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 table {
-  border-collapse: collapse;
-  width: 80%;
+  border:solid 1px;
+  border-radius: 20px;
+  margin-top:5px;
+  margin-left:15px;
+  margin-right:15px;
 }
 th {
-    border-bottom: 1px solid;
-    padding: 5px;
-    text-align: center;
-    height: 50px;
-
+    padding-left: 20px;
+    width: 220px;
+    text-align: left;
 }
-td {
-    border-bottom: 1px solid;
-    text-align: center;
-    height: 20px;
-}
-
 

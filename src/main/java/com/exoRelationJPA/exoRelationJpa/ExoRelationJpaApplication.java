@@ -19,8 +19,8 @@ public class ExoRelationJpaApplication {
     @Bean
     CommandLineRunner commandLineRunner(ProfesseurRepository professeurRepository, ClasseRepository classeRepository) {
         return args -> {
-            professeurRepository.save(new Professeur("Prof1", "max", "max@gmail.com"));
-            professeurRepository.save(new Professeur("Prof2", "bob", "bob@gmail.com"));
+            professeurRepository.save(new Professeur("la menace", "max", "max@gmail.com"));
+            professeurRepository.save(new Professeur("l'éponge", "bob", "bob@gmail.com"));
 
             Professeur professeur1 = professeurRepository.findById(1L).get();
             Professeur professeur2 = professeurRepository.findById(2L).get();
