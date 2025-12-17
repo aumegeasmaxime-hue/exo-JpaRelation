@@ -1,5 +1,6 @@
 package com.exoRelationJPA.exoRelationJpa.service;
 
+import com.exoRelationJPA.exoRelationJpa.model.Classe;
 import com.exoRelationJPA.exoRelationJpa.model.Professeur;
 import com.exoRelationJPA.exoRelationJpa.repository.ProfesseurRepository;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,17 @@ public class ProfesseurService {
     public void deleteProfesseur(Long id){
         Professeur deleteProfesseur = findProfesseurById(id);
         professeurRepository.delete(deleteProfesseur);
+    }
+    public int countClasses(Long id){
+        Professeur countProfesseur = findProfesseurById(id);
+        return countProfesseur.getClasses().size();
+        }
+    public int countEleves(Long id){
+        int count=0;
+        Professeur countElevesProfesseur = findProfesseurById(id);
+        for (Classe classe : countElevesProfesseur.getClasses()){
+            count += classe.getNbEleve();
+        }
+        return count;
     }
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <span>nom:</span>
+    <span th:text="${model.nom}"></span>
+
+    <span>niveau:</span>
+    <span th:text="${model.niveau}"></span>
+
+    <span>matiere:</span>
+    <span th:text="${model.matiere}"></span>
+
+    <span>nombre d'eleves:</span>
+    <span th:text="${model.nbEleve}"></span>
+</div>
+<div>
+    <span>professeur:</span>
+    <span th:text="${model.professeur.nom}"></span>
+    <span th:text="${model.professeur.prenom}"></span>
+    <span th:text="${model.professeur.email}"></span>
+    <a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button>Detail</button></a>
+</div>
+<div>
+    <a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button>Modifier</button></a>
+    <a th:href="@{/classes/{id}/delete(id=${model.id})}"><button>Delete</button></a>
+    <a th:href="@{/classes/}"><button>Retour</button></a>
+</div>
+
+
+
+
+
+
+</body>
+</html>

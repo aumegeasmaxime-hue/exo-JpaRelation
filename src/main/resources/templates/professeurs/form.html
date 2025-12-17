@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <form th:action="${professeur.id == null ? '/professeurs/new' : '/professeurs/' + professeur.id + '/modifier'}" th:object="${professeur}" method="post">
+
+        <label for="nom">nom: </label>
+        <input type="text" th:field="*{nom}" id="nom" required>
+
+        <label for="prenom">prenom: </label>
+        <input type="text" th:field="*{prenom}" id="prenom" required>
+
+        <label for="email">email: </label>
+        <input type="text" th:field="*{email}" id="email" required>
+
+        <div>
+            <button type="submit" class="bouton">Envoyer</button>
+        </div>
+    </form>
+</main>
+
+
+</body>
+</html>

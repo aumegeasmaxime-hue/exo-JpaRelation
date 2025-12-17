@@ -26,8 +26,8 @@ public class ExoRelationJpaApplication {
             Professeur professeur2 = professeurRepository.findById(2L).get();
 
             classeRepository.save(new Classe("classe1", "bac", "Math", 5, professeur1));
-            classeRepository.save(new Classe("classe1", "bac+1", "francais", 2, professeur1));
-            classeRepository.save(new Classe("classe1", "bac+2", "anglais", 10, professeur1));
+            classeRepository.save(new Classe("classe2", "bac+1", "francais", 2, professeur1));
+            classeRepository.save(new Classe("classe3", "bac+2", "anglais", 10, professeur1));
         };
     }
 
