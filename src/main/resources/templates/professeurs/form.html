@@ -5,29 +5,27 @@
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/professeur.css}">
 </head>
-<body>
+<body id="body-color">
     <header>
         <h2 class="titre">Formulaire ajouter un professeur</h2>
     </header>
 <main>
     <form th:action="${professeur.id == null ? '/professeurs/new' : '/professeurs/' + professeur.id + '/modifier'}" th:object="${professeur}" method="post">
+        <div id="div-gen-form-prof">
+                <label for="nom">nom: </label>
+                <input type="text" th:field="*{nom}" id="nom" required>
 
-        <label for="nom">nom: </label>
-        <input type="text" th:field="*{nom}" id="nom" required>
+                <label for="prenom">prenom: </label>
+                <input type="text" th:field="*{prenom}" id="prenom" required>
 
-        <label for="prenom">prenom: </label>
-        <input type="text" th:field="*{prenom}" id="prenom" required>
-
-        <label for="email">email: </label>
-        <input type="text" th:field="*{email}" id="email" required>
-
-        <div>
-            <button type="submit" class="bouton" id="bouton-submit">Envoyer</button>
+                <label for="email">email: </label>
+                <input type="text" th:field="*{email}" id="email" required>
+            <div>
+                <button type="submit" class="bouton" id="bouton-submit">Envoyer</button>
+            </div>
         </div>
     </form>
     <a href="javascript:history.back()"><button class="bouton" id="bouton-liste">Retour</button></a>
 </main>
-
-
 </body>
 </html>

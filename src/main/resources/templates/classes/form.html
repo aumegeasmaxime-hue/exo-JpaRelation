@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/professeur.css}">
 </head>
-<body>
+<body id="body-color">
 <main>
     <form th:action="${classe.id == null ? '/classes/new' : '/classes/' + classe.id + '/modifier'}" th:object="${classe}" method="post">
 
@@ -33,11 +34,11 @@
         </div>
 
         <div>
-            <button type="submit" class="bouton">Envoyer</button>
+            <button type="submit" class="bouton" id="bouton-submit">Envoyer</button>
 
         </div>
     </form>
-    <a href="javascript:history.back()"><button>Retour</button></a>
+    <a href="javascript:history.back()"><button class="bouton" id="bouton-liste">Retour</button></a>
 </main>
 
 </body>

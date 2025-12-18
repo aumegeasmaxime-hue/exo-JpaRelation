@@ -6,45 +6,44 @@
     <link rel="stylesheet" th:href="@{/css/professeur.css}">
 </head>
 
-<body>
+<body id="body-color">
     <header>
         <h2 class="titre">Details du professeur</h2>
     </header>
     <main>
-        <div>
-            <p th:text="${modelP.id}"></p>
-            <p th:text="${modelP.nom}"></p>
-            <p th:text="${modelP.prenom}"></p>
-            <p th:text="${modelP.email}"></p>
+        <div  id="div-detail-prof">
+            <span th:text="${modelP.nom}" class="detail-prof"></span>
+            <span th:text="${modelP.prenom}" class="detail-prof"></span>
+            <span th:text="${modelP.email}" class="detail-prof"></span>
         </div>
-        <div>
+        <div id="div-bouton-detail-prof">
             <a th:href="@{/professeurs/{id}/modifier(id=${modelP.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a>
             <a th:href="@{/professeurs/{id}/delete(id=${modelP.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a>
         </div>
         <div><h3>Classes enseignés</h3></div>
-        <table>
+        <table id="table-classe-gen">
             <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>Niveau</th>
-                    <th>Matière</th>
-                    <th>Nombre d'élèves</th>
+                    <th class="tab-classe-detail">Nom</th>
+                    <th class="tab-classe-detail">Niveau</th>
+                    <th class="tab-classe-detail">Matière</th>
+                    <th class="tab-classe-detail">Nombre d'élèves</th>
                 </tr>
             </thead>
             <tbody th:each="classe :${modelP.classes}">
-                <th><p th:text="${classe.nom}"></p></th>
-                <td><p th:text="${classe.niveau}"></p></td>
-                <td><p th:text="${classe.matiere}"></p></td>
-                <td><p th:text="${classe.nbEleve}"></p></td>
+                <th class="tab-classe-detail"><p th:text="${classe.nom}"></p></th>
+                <td class="tab-classe-detail"><p th:text="${classe.niveau}"></p></td>
+                <td class="tab-classe-detail"><p th:text="${classe.matiere}"></p></td>
+                <td class="tab-classe-detail"><p th:text="${classe.nbEleve}"></p></td>
             </tbody>
             <tfoot>
                 <tr>
-                    <th scope="row" colspan="3">Nombre total eleves</th>
-                    <td><p th:text="${nbEleve}"></p></td>
+                    <th scope="row" colspan="3" class="tab-classe-detail">Nombre total eleves</th>
+                    <td class="tab-classe-detail"><p th:text="${nbEleve}"></p></td>
                 </tr>
                 <tr>
-                    <th scope="row" colspan="3">Nombre de classes:</th>
-                    <td><p th:text="${nbClasse}"></p></td>
+                    <th scope="row" colspan="3" class="tab-classe-detail">Nombre de classes:</th>
+                    <td class="tab-classe-detail"><p th:text="${nbClasse}"></p></td>
                 </tr>
             </tfoot>
         </table>

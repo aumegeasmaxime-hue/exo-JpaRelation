@@ -1,14 +1,20 @@
 #body-color{
-    background-color: #bdbdbd;
+    background-color: #001f7a;
+    color: wheat;
+}
+.div-bouton {
+    display: flex;
+    justify-content: center;
 }
 .titre{
     text-align: center;
-    font-family: Optima, sans-serif;
-    color: #3400c2;
+    font-family: OCR A Std, monospace;
+    color:white;
+
 }
 .bouton{
     font-size: 15px;
-    font-family: Optima, sans-serif;
+    font-family: OCR A Std, monospace;
     color: white;
     border-radius: 20px;
     margin: 3px;
@@ -25,6 +31,9 @@
 #bouton-detail{
     background-color:#00a303;
 }
+#bouton-detail2{
+    background-color:#00a303;
+}
 #bouton-liste{
     background-color:#0617f9;
 }
@@ -39,15 +48,56 @@
     align-items: center;
 }
 table {
-  border:solid 1px;
-  border-radius: 20px;
-  margin-top:5px;
-  margin-left:15px;
-  margin-right:15px;
+    border:solid 1px;
+    border-radius: 20px;
+    margin-top:5px;
+    margin-left:15px;
+    margin-right:15px;
 }
 th {
     padding-left: 20px;
     width: 220px;
     text-align: left;
+}
+#div-detail-prof{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly
+}
+.detail-prof {
+    font-size: 17px;
+    font-family: OCR A Std, monospace;
+}
+#div-bouton-detail-prof{
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+#table-classe-gen{
+    border-collapse: collapse;
+}
+.tab-classe-detail{
+    border: solid 1px;
+    text-align: center;
+    font-family: OCR A Std, monospace;
+}
+
+#div-gen-form-prof{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: OCR A Std, monospace;
+}
+#div-nom-form-prof{
+
+}
+#div-gen-prenom-prof{
+
+}
+#div-email-form-prof{
+
+}
+#div-bouton-submit-form-prof{
+
 }
 

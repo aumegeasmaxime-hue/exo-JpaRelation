@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/professeur.css}">
 </head>
-<body>
-    <table>
+<body id="body-color">
+    <table id="table-classe-gen">
         <thead>
             <tr>
-                <th><p>Classe</p></th>
-                <th><p>Niveau:</p></th>
-                <th><p>Matiere:</p></th>
-                <th><p>Nombre d'élèves:</p></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th><p>Professeur:</p></th>
-                <th><p>Prenom:</p></th>
-                <th><p>Email:</p></th>
+                <th class="tab-classe-detail"><p>Classe</p></th>
+                <th class="tab-classe-detail"><p>Niveau:</p></th>
+                <th class="tab-classe-detail"><p>Matiere:</p></th>
+                <th class="tab-classe-detail"><p>Nombre d'élèves:</p></th>
+                <th class="tab-classe-detail"></th>
+                <th class="tab-classe-detail"></th>
+                <th class="tab-classe-detail"></th>
+                <th class="tab-classe-detail"><p>Professeur:</p></th>
+                <th class="tab-classe-detail"><p>Prenom:</p></th>
+                <th class="tab-classe-detail"><p>Email:</p></th>
             </tr>
         </thead>
         <tbody>
-            <td><p th:text="${model.nom}"></p></td>
-            <td><p th:text="${model.niveau}"></p></td>
-            <td><p th:text="${model.matiere}"></p></td>
-            <td><p th:text="${model.nbEleve}"></p></td>
-            <td><a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button>Modifier</button></a></td>
-            <td><a th:href="@{/classes/{id}/delete(id=${model.id})}"><button>Delete</button></a></td>
-            <td></td>
-            <td><p th:text="${model.professeur.nom}"></p></td>
-            <td><p th:text="${model.professeur.prenom}"></p></td>
-            <td><p th:text="${model.professeur.email}"></p></td>
-            <td><a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button>Detail</button></a></td>
+            <td class="tab-classe-detail"><p th:text="${model.nom}"></p></td>
+            <td class="tab-classe-detail"><p th:text="${model.niveau}"></p></td>
+            <td class="tab-classe-detail"><p th:text="${model.matiere}"></p></td>
+            <td class="tab-classe-detail"><p th:text="${model.nbEleve}"></p></td>
+            <td class="tab-classe-detail"><a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a></td>
+            <td class="tab-classe-detail"><a th:href="@{/classes/{id}/delete(id=${model.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a></td>
+            <td class="tab-classe-detail"></td>
+            <td class="tab-classe-detail"><p th:text="${model.professeur.nom}"></p></td>
+            <td class="tab-classe-detail"><p th:text="${model.professeur.prenom}"></p></td>
+            <td class="tab-classe-detail"><p th:text="${model.professeur.email}"></p></td>
+            <td class="tab-classe-detail"><a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button class="bouton" id="bouton-detail">Detail</button></a></td>
         </tbody>
     </table>
     <div>
-        <a href="javascript:history.back()"><button>Retour</button></a>
+        <a href="javascript:history.back()"><button class="bouton" id="bouton-liste">Retour</button></a>
     </div>
 </body>
 </html>
