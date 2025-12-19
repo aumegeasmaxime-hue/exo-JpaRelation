@@ -8,31 +8,30 @@
 <body id="body-color">
 <main>
     <form th:action="${classe.id == null ? '/classes/new' : '/classes/' + classe.id + '/modifier'}" th:object="${classe}" method="post">
+        <div id="form-classe-gen">
+            <label for="nom">nom: </label>
+            <input type="text" th:field="*{nom}" id="nom" required>
 
-        <label for="nom">nom: </label>
-        <input type="text" th:field="*{nom}" id="nom" required>
+            <label for="niveau">niveau: </label>
+            <input type="text" th:field="*{niveau}" id="niveau" required>
 
-        <label for="niveau">niveau: </label>
-        <input type="text" th:field="*{niveau}" id="niveau" required>
+            <label for="matiere">matiere: </label>
+            <input type="text" th:field="*{matiere}" id="matiere" required>
 
-        <label for="matiere">matiere: </label>
-        <input type="text" th:field="*{matiere}" id="matiere" required>
+            <label for="nb-eleve">Nombre d'élèves: </label>
+            <input type="text" th:field="*{nbEleve}" id="nb-eleve" required>
 
-        <label for="nb-eleve">Nombre d'élèves: </label>
-        <input type="text" th:field="*{nbEleve}" id="nb-eleve" required>
-
-        <div>
             <label for="professeur">Professeur</label>
-            <select id="professeur" name="professeur" class="form-input" required>
-                <option value="">-- Sélectionner un professeur --</option>
-                <option th:each="prof : ${professeurs}"
-                        th:value="${prof.id}"
-                        th:text="${prof.prenom} + ' ' + ${prof.nom}"
-                        th:selected="${classe.professeur != null && classe.professeur.id == prof.id}">
-                </option>
-            </select>
-        </div>
+                <select id="professeur" name="professeur" class="form-input" required>
+                    <option value="">-- Sélectionner un professeur --</option>
+                    <option th:each="prof : ${professeurs}"
+                            th:value="${prof.id}"
+                            th:text="${prof.prenom} + ' ' + ${prof.nom}"
+                            th:selected="${classe.professeur != null && classe.professeur.id == prof.id}">
+                    </option>
+                </select>
 
+        </div>
         <div>
             <button type="submit" class="bouton" id="bouton-submit">Envoyer</button>
 

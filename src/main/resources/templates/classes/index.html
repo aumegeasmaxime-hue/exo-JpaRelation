@@ -13,10 +13,13 @@
         <div>
             <a th:href="@{/classes/new}"><button class="bouton" id="bouton-cree">Ajouter une classe</button></a>
         </div>
+        <div>
+            <h2>Classes</h2>
+        </div>
         <table id="table-classe-gen">
             <tbody th:each="model :${models}">
-                <th class="tab-classe-detail"><p>Classe:</p></th>
                 <td class="tab-classe-detail"><p th:text="${model.nom}"></p></td>
+                <td class="tab-classe-detail"><p th:text="${model.matiere}" th:class="'matiere-'+${model.matiere}">></p></td>
                 <td class="tab-classe-detail"><a th:href="@{/classes/{id}(id=${model.id})}"><button class="bouton" id="bouton-detail">Details</button></a></td>
                 <td class="tab-classe-detail"><a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a></td>
                 <td class="tab-classe-detail"><a th:href="@{/classes/{id}/delete(id=${model.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a></td>
