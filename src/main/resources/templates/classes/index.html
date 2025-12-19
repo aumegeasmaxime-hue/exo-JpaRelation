@@ -29,7 +29,13 @@
                 <td class="tab-classe-detail"><a th:href="@{/professeurs/{id}(id=${model.professeur.id})}"><button class="bouton" id="bouton-detail2">Detail</button></a></td>
             </tbody>
         </table>
-        <div>
+        <table>
+            <tr id="tr-nb-classe">
+                <th><p>Nombre total de classes</p></th>
+                <td id="nb-classe"><p th:text="${nbClasses}"></p></td>
+            </tr>
+        </table>
+        <div id="div-bouton-liste-prof">
             <a th:href="@{/professeurs/}"><button class="bouton" id="bouton-liste">Liste professeurs</button></a>
         </div>
     </main>

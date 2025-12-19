@@ -20,7 +20,8 @@ public class ClasseController {
 
     @GetMapping("/")
     public String getAllClasse (Model model){
-        model.addAttribute("models",classeService.getAllArticle());
+        model.addAttribute("models",classeService.getAllClasses());
+        model.addAttribute("nbClasses",classeService.nbClasses());
         return "/classes/index";
     }
     @GetMapping("/{id}")
@@ -59,4 +60,5 @@ public class ClasseController {
         classeService.deleteClasse(id);
         return "redirect:/classes/";
     }
+
 }

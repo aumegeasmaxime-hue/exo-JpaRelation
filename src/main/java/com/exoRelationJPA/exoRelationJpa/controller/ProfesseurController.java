@@ -17,6 +17,7 @@ public class ProfesseurController {
     @GetMapping("/")
     public String getAllProfesseur (Model modelP){
         modelP.addAttribute("models",professeurService.getAllProfesseur());
+        modelP.addAttribute("nbProf",professeurService.nbprofesseur());
         return "/professeurs/index";
     }
     @GetMapping("/{id}")

@@ -56,4 +56,7 @@ public class ProfesseurService {
         }
         return count/i;
     }
+    public int nbprofesseur (){
+        return getAllProfesseur().size();
+    }
 }

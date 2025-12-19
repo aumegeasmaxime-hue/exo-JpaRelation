@@ -13,7 +13,7 @@ public class ClasseService {
     public ClasseService (ClasseRepository classeRepository){
         this.classeRepository = classeRepository;
     }
-    public List<Classe> getAllArticle() {
+    public List<Classe> getAllClasses() {
         return classeRepository.findAll();
     }
     public Classe findClasseById(Long id){
@@ -29,5 +29,8 @@ public class ClasseService {
     public void deleteClasse(Long id){
         Classe deleteClasse = findClasseById(id);
         classeRepository.delete(deleteClasse);
+    }
+    public int nbClasses (){
+        return getAllClasses().size();
     }
 }

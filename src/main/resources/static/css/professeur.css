@@ -76,7 +76,7 @@ th {
 }
 #table-classe-gen{
     box-shadow: 1px 1px 1px 10px wheat;
-    margin:10px;
+    margin-bottom: 10px;
 
 }
 .tab-classe-detail{
@@ -84,7 +84,7 @@ th {
     font-family: OCR A Std, monospace;
     padding-left: 6px;
     padding-right: 6px;
-    margin: 5px;
+    margin:5px;
     border-bottom: solid 1px;
 }
 
@@ -127,5 +127,17 @@ th {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#tr-nb-classe{
+    box-shadow: 1px 1px 1px 10px wheat;
+    border-radius:20px;
+    margin-top: 10px;
+}
+#nb-classe{
+    padding-right: 10px;
+}
+#div-bouton-liste-prof{
+    padding-top: 20px;
+
 
 }
