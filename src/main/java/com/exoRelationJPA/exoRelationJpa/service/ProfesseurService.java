@@ -49,10 +49,15 @@ public class ProfesseurService {
         this.count=0;
         int i = 0;
         Professeur averageEleveProf = findProfesseurById(id);
-        for (Classe classe : averageEleveProf.getClasses()){
-            count+= classe.getNbEleve();
-            i++;
+        if (averageEleveProf.getClasses().isEmpty()){
+            return 0;
+        }
+        else {
+            for (Classe classe : averageEleveProf.getClasses()) {
+                count += classe.getNbEleve();
+                i++;
 
+            }
         }
         return count/i;
     }

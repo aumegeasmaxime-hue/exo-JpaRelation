@@ -44,6 +44,7 @@ public class ClasseController {
     public String getFormModifyClasse(@PathVariable Long id,Model model) {
         Classe classe = classeService.findClasseById(id);
         if (classe != null){
+            model.addAttribute("professeurs",professeurService.getAllProfesseur());
             model.addAttribute("classe", classe);
             return "/classes/form";
         }
