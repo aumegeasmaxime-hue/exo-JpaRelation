@@ -17,8 +17,7 @@ public class ProfesseurService {
         this.professeurRepository = professeurRepository;
     }
     public List<Professeur> getAllProfesseur() {
-        Sort sort = Sort.by("nom").ascending();
-        return professeurRepository.findAll(sort);
+        return professeurRepository.findAll(Sort.by("nom").ascending());
     }
     public Professeur findProfesseurById(Long id){
         return professeurRepository.findById(id)
