@@ -33,8 +33,9 @@
             <tbody th:each="classe :${modelP.classes}">
                 <th class="tab-classe-detail"><p th:text="${classe.nom}"></p></th>
                 <td class="tab-classe-detail"><p th:text="${classe.niveau}"></p></td>
-                <td class="tab-classe-detail"><p th:text="${classe.matiere}"></p></td>
+                <td class="tab-classe-detail"><p th:text="${classe.matiere}" th:class="'matiere-'+${classe.matiere}"></p></td>
                 <td class="tab-classe-detail"><p th:text="${classe.nbEleve}"></p></td>
+
             </tbody>
             <tfoot>
                 <tr>
@@ -45,6 +46,11 @@
                     <th scope="row" colspan="3" class="tab-classe-detail">Nombre de classes:</th>
                     <td class="tab-classe-detail"><p th:text="${nbClasse}"></p></td>
                 </tr>
+                <tr>
+                    <th scope="row" colspan="3" class="tab-classe-detail">Moyenne d'eleve / professeur:</th>
+                    <td class="tab-classe-detail"><p th:text="${moyenEleve}"></p></td>
+                </tr>
+
             </tfoot>
         </table>
         <div>

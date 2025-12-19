@@ -24,6 +24,7 @@ public class ProfesseurController {
         modelP.addAttribute("modelP",professeurService.findProfesseurById(id));
         modelP.addAttribute("nbClasse",professeurService.countClasses(id));
         modelP.addAttribute("nbEleve",professeurService.countEleves(id));
+        modelP.addAttribute("moyenEleve",professeurService.averageEleveProf(id));
         return "/professeurs/details";
     }
     @GetMapping("/new")

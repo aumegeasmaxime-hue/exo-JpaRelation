@@ -3,19 +3,22 @@ package com.exoRelationJPA.exoRelationJpa.service;
 import com.exoRelationJPA.exoRelationJpa.model.Classe;
 import com.exoRelationJPA.exoRelationJpa.model.Professeur;
 import com.exoRelationJPA.exoRelationJpa.repository.ProfesseurRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ProfesseurService {
+    int count;
     private ProfesseurRepository professeurRepository;
 
     public ProfesseurService (ProfesseurRepository professeurRepository){
         this.professeurRepository = professeurRepository;
     }
     public List<Professeur> getAllProfesseur() {
-        return professeurRepository.findAll();
+        Sort sort = Sort.by("nom").ascending();
+        return professeurRepository.findAll(sort);
     }
     public Professeur findProfesseurById(Long id){
         return professeurRepository.findById(id)
@@ -36,11 +39,22 @@ public class ProfesseurService {
         return countProfesseur.getClasses().size();
         }
     public int countEleves(Long id){
-        int count=0;
+        this.count=0;
         Professeur countElevesProfesseur = findProfesseurById(id);
         for (Classe classe : countElevesProfesseur.getClasses()){
             count += classe.getNbEleve();
         }
         return count;
+    }
+    public int averageEleveProf (long id){
+        this.count=0;
+        int i = 0;
+        Professeur averageEleveProf = findProfesseurById(id);
+        for (Classe classe : averageEleveProf.getClasses()){
+            count+= classe.getNbEleve();
+            i++;
+
+        }
+        return count/i;
     }
 }

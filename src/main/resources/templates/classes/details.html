@@ -24,7 +24,7 @@
         <tbody>
             <td class="tab-classe-detail"><p th:text="${model.nom}"></p></td>
             <td class="tab-classe-detail"><p th:text="${model.niveau}"></p></td>
-            <td class="tab-classe-detail"><p th:text="${model.matiere}" th:class="'matiere-'+${model.matiere}">></p></td>
+            <td class="tab-classe-detail"><p th:text="${model.matiere}" th:class="'matiere-'+${model.matiere}"></p></td>
             <td class="tab-classe-detail"><p th:text="${model.nbEleve}"></p></td>
             <td class="tab-classe-detail"><a th:href="@{/classes/{id}/modifier(id=${model.id})}"><button class="bouton" id="bouton-modifier">Modifier</button></a></td>
             <td class="tab-classe-detail"><a th:href="@{/classes/{id}/delete(id=${model.id})}"><button class="bouton" id="bouton-supprimer">Delete</button></a></td>
